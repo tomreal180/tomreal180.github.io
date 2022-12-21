@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Duchoclaptrinh Form</title>
+    <meta name="description" content="Duchoclaptrinh Form">
+    <meta name="keywords" content="Forms, Course, IT Registration">
+    <meta name="author" content="Duc hoc lap trinh">
+</head>
+
+<body>
+    <h1>Stanford Unversity</h1>
+    <h2>Registration Form</h2>
+    <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+        <fieldset>
+            <legend>Contact Information</legend>
+            <p>
+                <label for="firstname">Enter your First Name:</label>
+                <input type="text" id="firstname" name="firstname">
+            </p>
+            <p>
+                <label for="lastname">Enter your Last Name:</label>
+                <input type="text" id="lastname" name="lastname">
+            </p>
+            <p>
+                <label for="email">Enter your Email:</label>
+                <input type="text" id="email" name="email">
+            </p> 
+            <p>
+                <label for="phonenumber">Enter your Phone Number:</label>
+                <input type="text" id="phonenumber" name="phonenumber">
+            </p>
+            <p>
+                <label for="age">Enter your Age:</label>
+                <input type="text" id="age" name="age">
+            </p>
+        </fieldset>
+        <br>
+        
+        <fieldset>
+            <legend>Degree</legend>
+            <label for="ausbildung">Ausbildung</label>
+            <input type="radio" id="ausbildung" name="degree" value="ausbildung"><br>
+            <label for="bachelor">Bachelor</label>
+            <input type="radio" id="bachelor" name="degree" value="bachelor"><br>
+            <label for="master">Master</label>
+            <input type="radio" id="master" name="degree" value="master"><br>
+            <label for="ph.d">Ph.D</label>
+            <input type="radio" id="ph.d" name="degree" value="ph.d"><br>
+        </fieldset>
+        <br>
+        
+        <fieldset>
+            <legend>Stanford Requirement</legend>
+            <label for="highschoolgraduation">High School Graduation</label>
+            <input type="checkbox" id="highschoolgraduation" name="highschoolgraduation" value="passed"><br>
+            <label for="english">English</label>
+            <input type="checkbox" id="english" name="english" value="passed"><br>
+            <label for="interview">Interview</label>
+            <input type="checkbox" id="interview" name="interview" value="passed"><br>
+            <label for="essay">Essay</label>
+            <input type="checkbox" id="essay" name="essay" value="passed"><br>
+        </fieldset>
+
+        <br>
+        <input type="submit" value="Register Now">
+
+        
+    </form>
+
+</body>
+</html>
