@@ -5,12 +5,13 @@
     <meta name="description" content="Duchoclaptrinh Form">
     <meta name="keywords" content="Forms, Course, IT Registration">
     <meta name="author" content="Duc hoc lap trinh">
+    <script src="register.js"></script>
 </head>
 
 <body>
     <h1>Stanford Unversity</h1>
     <h2>Registration Form</h2>
-    <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+    <form id="registerForm" method="post" action="confirm.html">
         <fieldset>
             <legend>Contact Information</legend>
             <p>
@@ -36,23 +37,23 @@
         </fieldset>
         <br>
         
-        <fieldset>
+        <fieldset id="radioDegree">
             <legend>Degree</legend>
             <label for="ausbildung">Ausbildung</label>
-            <input type="radio" id="ausbildung" name="degree" value="ausbildung"><br>
+            <input type="radio" id="ausbildung" name="degree" value="Ausbildung"><br>
             <label for="bachelor">Bachelor</label>
-            <input type="radio" id="bachelor" name="degree" value="bachelor"><br>
+            <input type="radio" id="bachelor" name="degree" value="Bachelor"><br>
             <label for="master">Master</label>
-            <input type="radio" id="master" name="degree" value="master"><br>
+            <input type="radio" id="master" name="degree" value="Master"><br>
             <label for="ph.d">Ph.D</label>
-            <input type="radio" id="ph.d" name="degree" value="ph.d"><br>
+            <input type="radio" id="ph.d" name="degree" value="Ph.D"><br>
         </fieldset>
         <br>
         
-        <fieldset>
+        <fieldset id="radioRequire">
             <legend>Stanford Requirement</legend>
-            <label for="highschoolgraduation">High School Graduation</label>
-            <input type="checkbox" id="highschoolgraduation" name="highschoolgraduation" value="passed"><br>
+            <label for="universitygeraduation">University Graduation</label>
+            <input type="checkbox" id="universitygraduation" name="universitygraduation" value="passed"><br>
             <label for="english">English</label>
             <input type="checkbox" id="english" name="english" value="passed"><br>
             <label for="interview">Interview</label>
@@ -60,9 +61,17 @@
             <label for="essay">Essay</label>
             <input type="checkbox" id="essay" name="essay" value="passed"><br>
         </fieldset>
-
         <br>
+        <label for="major">Major:</label>
+        <select name="major" id="major">
+            <option value="none">Please choose</option>
+            <option value="computerscience">Computer Science</option>
+            <option value="businessadmistration">Business Admistration</option>
+            <option value="dual">Dual</option>
+        </select><br>
+         <br>
         <input type="submit" value="Register Now">
+        <input type="reset" value="Reset">
 
         
     </form>
