@@ -7,6 +7,7 @@ function loadData(){
     var degree= document.getElementById("confirm-degree");
     var requirement=document.getElementById("confirm-requirement");
     var major= document.getElementById("confirm-major");
+    var result= document.getElementById("confirm-result");
 
     //change a text content
     lastname=sessionStorage.getItem("lastname");
@@ -20,15 +21,21 @@ function loadData(){
     var text="";
     var allrequire= sessionStorage.getItem("allrequirement").split(",");
     var i=0;
+    var score=0;
     while(i<allrequire.length){
         if (sessionStorage.getItem(allrequire[i]) == "true"){
             text+=allrequire[i]+", ";
+            score+=1;
         }
         i++;
     }
     text= text.substring(0,text.length-2);
     requirement.textContent = text;
-    console.log("abc");
+    if(score ==4){
+        result.textContent = "Passed";
+    }else{
+        result.textContent = "Not Passed";
+    }
 }
 
 

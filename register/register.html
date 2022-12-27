@@ -11,28 +11,29 @@
 <body>
     <h1>Stanford Unversity</h1>
     <h2>Registration Form</h2>
-    <form id="registerForm" method="post" action="confirm.html">
+    <div id="error" style="color: red"></div>
+    <form id="registerForm" method="post" action="confirm.html" novalidate>
         <fieldset>
             <legend>Contact Information</legend>
             <p>
                 <label for="firstname">Enter your First Name:</label>
-                <input type="text" id="firstname" name="firstname">
+                <input type="text" id="firstname" name="firstname" pattern="^[A-Z a-z]{0,30}$">
             </p>
             <p>
                 <label for="lastname">Enter your Last Name:</label>
-                <input type="text" id="lastname" name="lastname">
+                <input type="text" id="lastname" name="lastname" pattern="^[A-Za-z]{0,30}$">
             </p>
             <p>
                 <label for="email">Enter your Email:</label>
-                <input type="text" id="email" name="email">
+                <input type="text" id="email" name="email" pattern="^[^ ]*@[^ ]*[.][^ ]*$">
             </p> 
             <p>
                 <label for="phonenumber">Enter your Phone Number:</label>
-                <input type="text" id="phonenumber" name="phonenumber">
+                <input type="text" id="phonenumber" name="phonenumber" pattern="((\+84)|0)\d{9,10}">
             </p>
             <p>
                 <label for="age">Enter your Age:</label>
-                <input type="text" id="age" name="age">
+                <input type="text" id="age" name="age" pattern="^((\d)|(\d\d)|([1][0-4][0-9])|(150))$">
             </p>
         </fieldset>
         <br>

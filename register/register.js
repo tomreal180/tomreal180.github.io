@@ -1,4 +1,4 @@
-function saveData(){
+function validate(){
     //save date in information box
     var firstname= document.getElementById("firstname").value;
     var lastname= document.getElementById("lastname").value;
@@ -23,7 +23,6 @@ function saveData(){
     var i=0;
     var allrequirement=[];
     while(i<requireArray.length){
-        console.log("123");
         if (requireArray[i].checked ==true){
             sessionStorage.setItem(requireArray[i].name,true);
         }else{
@@ -38,6 +37,29 @@ function saveData(){
     //save data in major dropbox
     var majorselect=document.getElementById("major");
     sessionStorage.setItem("major",majorselect.value);
+
+    //validate
+    var errorMsg="";
+    //condition 1
+    if (firstname.match("^[A-Z a-z]{0,30}$")== null){
+        errorMsg+= "first name contains only characters and between 1 and 30 digits <br>";
+    }
+    //condition 2
+    if(lastname.match("^[A-Za-z]{0,30}$")==null){
+        errorMsg+= "last name contains only characters and between 1 and 30 digits <br>";
+    
+
+    //condition 2
+    if(email.match("^[^ ]*@[^ ]*[.][^ ]*$")==null){
+        errorMsg+= "email is unavailable <br>";
+    }
+    if (errorMsg==""){
+        return true;
+    }else{
+        document.getElementById("error").innerHTML=errorMsg;
+        return false;
+    }
+
 }
 
 function prefill(){
@@ -75,7 +97,7 @@ function prefill(){
 
 function init(){
     var regForm= document.getElementById("registerForm");
-    regForm.onsubmit= saveData;
+    regForm.onsubmit= validate;
     prefill();
 }
 
