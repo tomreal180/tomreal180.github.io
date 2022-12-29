@@ -39,25 +39,46 @@ function validate(){
     sessionStorage.setItem("major",majorselect.value);
 
     //validate
-    var errorMsg="";
-    //condition 1
-    if (firstname.match("^[A-Z a-z]{0,30}$")== null){
-        errorMsg+= "first name contains only characters and between 1 and 30 digits <br>";
+   errorMsg="";
+    // logic 1
+    if (firstname.match("^[A-Z a-z]{1,30}$") == null){
+        errorMsg += "First name has to contain only characters and between 1 or 30 characters <br>";
     }
-    //condition 2
-    if(lastname.match("^[A-Za-z]{0,30}$")==null){
-        errorMsg+= "last name contains only characters and between 1 and 30 digits <br>";
-    
 
-    //condition 2
-    if(email.match("^[^ ]*@[^ ]*[.][^ ]*$")==null){
-        errorMsg+= "email is unavailable <br>";
+    // logic 2
+    if (lastname.match("^[A-Za-z]{1,30}$") == null){
+        errorMsg += "Last name has to contain only characters and between 1 or 30 characters <br>";
     }
-    if (errorMsg==""){
-        return true;
+
+    // logic 3
+    if (email.match("^[^ ]*@[^ ]*[.][^ ]*$") == null){
+        errorMsg += "Email has to contain @<br>";
+    }
+
+    // logic 4
+    if (phonenumber.match("((\\+84)|0)\\d{9,10}") == null){
+        errorMsg += "Phone Number has to start with +84 0r 0 and is between 9 or 10 digits<br>";
+    }
+
+    // logic 5
+    if (age.match("^((\\d)|(\\d\\d)|([1][0-4][0-9])|(150))$") == null){
+        errorMsg += "Age has to be a number less than 150<br>";
+    }
+
+    // logic 6
+    if (sessionStorage.degree=="Ph.D"){
+        if (parseInt(age)<27){
+            errorMsg += "if Ph.D then age need to be greater than or equal to 27<br>";
+
+        }
+
+        
+    }
+    if (errorMsg ==""){
+        return true
     }else{
         document.getElementById("error").innerHTML=errorMsg;
-        return false;
+        return false
     }
 
 }
